@@ -1,70 +1,134 @@
-# Getting Started with Create React App
+festival-greeting/
+├── public/ # optional static assets (favicon, images)
+├── src/
+│ ├── App.js # Main React component (greeting, countdown, confetti)
+│ ├── index.css # Global styles (diyas, animations, layout)
+│ └── main.jsx # Vite entry point (or index.js for CRA)
+├── index.html
+├── package.json
+├── vite.config.js # (if using Vite)
+└── README.md
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+If you used Create React App the production output will be in `build/` instead of `dist/`.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📦 Installation & Setup (Vite)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Clone the repo:
+```bash
+git clone https://github.com/YOUR_USERNAME/festival-greeting.git
+cd festival-greeting
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+Install dependencies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+npm install
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Run development server:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+npm run dev
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Open http://localhost:5173 (or the URL shown in terminal).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Build for production:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm run build
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Preview production build locally:
 
-## Learn More
+npm run preview
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+🔁 If you used Create React App (CRA)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Install dependencies:
 
-### Code Splitting
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+Run dev server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+npm start
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Open http://localhost:3000.
 
-### Advanced Configuration
+Build for production:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+npm run build
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+CRA produces a build/ folder (use build as the publish/output folder in deployment settings).
 
-### `npm run build` fails to minify
+📦 Dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This app is intentionally lightweight. Typical deps (already in package.json):
+
+react
+
+react-dom
+
+vite (if using Vite)
+
+No heavy libraries required. If you want to add more features, you can install:
+
+npm install react-router-dom react-icons
+
+☁️ Deployment
+Deploy on Vercel (recommended)
+
+Push your code to GitHub.
+
+Go to Vercel
+ → Sign in with GitHub → Import Project.
+
+Select your repository festival-greeting.
+
+Vercel auto-detects Vite or CRA:
+
+For Vite: Build command npm run build, Output directory dist
+
+For CRA: Build command npm run build, Output directory build
+
+Click Deploy. Vercel will give you a live URL.
+
+Deploy on Netlify
+
+Push your repo to GitHub.
+
+Go to Netlify
+ → New site → Import from Git → choose your repo.
+
+Set:
+
+Build command: npm run build
+
+Publish directory: dist (Vite) or build (CRA)
+
+Click Deploy site. Netlify will provide a live URL.
+
+✅ What to submit for Practical 3
+
+GitHub repository link: https://github.com/YOUR_USERNAME/festival-greeting
+
+Live URL (Vercel or Netlify)
+
+Screenshot of GitHub repo showing latest commit
+
+Screenshot of Vercel/Netlify showing successful production deploy
+
+Short command log (the terminal commands you ran)
+
+✍️ How to change festival name & date
+
+Open src/App.js (top of file) and edit:
+
+const FESTIVAL_NAME = 'Diwali';
+const FESTIVAL_DATE = new Date(2025, 10, 1, 0, 0, 0); // months are 0-indexed: 10 == November
+
+
+Save, commit, and push — the deployed site will auto-update.
